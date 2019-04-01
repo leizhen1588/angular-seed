@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+<router-outlet></router-outlet>
+
+
+<el-menu   class="el-menu-demo" mode="horizontal"
+         background-color="#545c64"
+         active-text-color="#ffd04b"
+         text-color="#fff">
+  <el-menu-item index="1"><a routerLink="/child">sdfasdf</a></el-menu-item>
+  <el-submenu index="2" title="我的工作台">
+    <el-menu-item index="2-1">选项1</el-menu-item>
+    <el-menu-item index="2-2">选项2</el-menu-item>
+    <el-menu-item index="2-3">选项3</el-menu-item>
+  </el-submenu>
+  <el-menu-item index="3"><a routerLink="/login">GITHUB</a></el-menu-item>
+</el-menu>
+
+<el-table [model]="tableData" [scroll-x]="true" center="all">
+  <el-table-column model-key="name" label="姓名" width="140">
+  </el-table-column>
+  <el-table-column model-key="date" label="日期" width="140">
+  </el-table-column>
+  <el-table-column model-key="address" label="地址" width="140" [render-html]="true">
+  </el-table-column>
+  <el-table-column label="操作" width="120">
+    <ng-template #slot let-scope="scope">
+      <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+    </ng-template>
+  </el-table-column>
+  <el-table-column label="操作" width="120">
+    <ng-template #slot let-scope="scope">
+      <el-button type="text" size="small" (click)="handle(scope)">删除</el-button>
+    </ng-template>
+  </el-table-column>
+</el-table>
